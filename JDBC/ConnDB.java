@@ -12,9 +12,9 @@ public class ConnDB {
     public static Connection sConn = null;
     public static void main(String[] args) {
         String strDbUrl = "jdbc:sqlserver://localhost:1433; "
-                + "databaseName=SinhVien;"
-                + "user=sa;"
-                + "password=tienthm;"
+                + "databaseName=SinhVien;"  //Cấu hình theo tên database muốn kết nối
+                + "user=sa;"                
+                + "password=tienthm;"       //Cấu hình theo mật khẩu tài khoản sa
                 + "encrypt=true;trustServerCertificate=true";
         if (sConn == null) {
             try {              
