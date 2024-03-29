@@ -26,10 +26,10 @@ public class QuanLySinhVien extends javax.swing.JFrame {
      */
     public QuanLySinhVien() {
         initComponents();
-        this.initData();
+        this.loadDataToArray();
     }
     
-    public void initData(){
+    public void loadDataToArray(){
         try{
             Connection connect = DriverManager.getConnection(strDbUrl);
             System.out.println("OK");
@@ -349,7 +349,7 @@ public class QuanLySinhVien extends javax.swing.JFrame {
         }catch(Exception e){
             System.out.println("Loi ket noi "+ e);
         }
-        initData();
+        loadDataToArray();
     }//GEN-LAST:event_btnSaveActionPerformed
 
     /**
