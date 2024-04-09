@@ -3,30 +3,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package utils;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-
+import java.sql.*;
 /**
  *
- * @author tiennh
+ * @author TienTHM_1
  */
-public class DbConnect {
+public class ConnectDB {
     private static Connection conn;
     
     public static Connection getConnection()
     {
         try {
             if (conn == null || conn.isClosed()) {
-                String dbUser = "sa", dbPass = "Aa@123456",
-                    dbUrl = "jdbc:sqlserver://localhost:1433;
-			    databaseName=QuanLySinhVien;
-			   encrypt=true;trustServerCertificate=true;";
+                String dbUser = "sa", dbPass = "tienthm",
+                    dbUrl = "jdbc:sqlserver://localhost:1433;databaseName=ThiThu2;encrypt=true;trustServerCertificate=true;";
 
                 conn = DriverManager.getConnection(dbUrl, dbUser, dbPass);
                 System.out.println("Kết nối thành công");
             }
-        } catch SQLException e) {
+        } catch (SQLException e) {
              System.out.println("Lỗi kết nối: " + e);
         }
         
